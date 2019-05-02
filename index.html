@@ -1,0 +1,113 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/gnet27/files/master/otherfavicons/time-passing.png" />
+<link rel="mask-icon" type="" href="https://raw.githubusercontent.com/gnet27/files/master/otherfavicons/time-passing.png" color="#111" />
+<title>Birthday</title>
+</head>
+<body translate="no">
+<!DOCTYPE html>
+<meta name="keywords" content="Ravishankar Sivasubramaniam">
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Birthday</title>
+<link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+    html body {
+      font-family: 'Gugi', cursive;
+      background-color: lightblue;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+
+    body {
+      padding-top: 55px;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    clock {
+      margin: auto;
+      padding: 25px;
+      flex: 1 0 auto;
+      max-width: 750px;
+    }
+
+    /*footer*/
+
+    .now {
+      margin: 15px 0;
+      font-family: sans-serif;
+    }
+
+    /*home page*/
+
+    .logo {
+      transform: translateY(22vh);
+      color: #212121;
+      font-size: 6vh;
+    }
+
+    .clock {
+      transform: translateY(22vh);
+      color: #212121;
+      font-size: 7vh;
+    }
+  </style>
+<body>
+<clock>
+<div>
+<p class="logo">George's birthday is in...</p>
+<p class="clock" id="timer"></p>
+</div>
+</clock>
+<footer>
+<p class="now text-muted" id="now"></p>
+</footer>
+</body>
+</html>
+<script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("Aug 15, 2019 00:00:00").getTime();
+  // Update the count down every 1 second
+  var x = setInterval(function () {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    // console.log(new Date())
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the result in an element with id="demo"
+    document.getElementById("timer").innerHTML = days + "d  " + hours + "h  "
+      + minutes + "m  " + '<br>' + seconds + "s ";
+      document.getElementById("now").innerHTML = new Date();
+    // If the count down is over, write some text 
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("timer").innerHTML = "-- : -- : --";
+    }
+  }, 1000);
+</script>
+<font size="3">
+<DIV style="position: absolute; top: 5px; width: 150px; left: 0px; height: 0px; ">Gnet27 Timer ‍ ‍ ‍ ‍ ‍ ‍ ‍ </div>
+<script src="https://static.codepen.io/assets/editor/live/css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js"></script>
+</body>
+</html>
